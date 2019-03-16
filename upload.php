@@ -1,10 +1,13 @@
 <?php
 // Include the database configuration file
+error_reporting(E_ALL | E_STRICT);
+ini_set('display_errors',1);
 include 'dbConfig.php';
 $statusMsg = '';
+global $db;
 
 // File upload path
-$targetDir = "uploads/";
+$targetDir = "/var/www/html/file/upload/";
 $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
